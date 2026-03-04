@@ -13,15 +13,18 @@ const buttonClass = isMission ? 'bg-primary shadow-primary/20' : 'bg-accent-red 
 ---
 
 <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 h-20">
-    <div class="flex items-center gap-3">
-      <div class={`flex h-10 w-10 items-center justify-center rounded-full ${isMission ? 'bg-primary' : 'bg-primary-gold'} text-white`}>
-        <span class="material-symbols-outlined">{isMission ? 'flutter_dash' : 'diversity_3'}</span>
-      </div>
-      <h2 class={`text-xl font-bold tracking-tight ${primaryColorClass}`}>AFT Kids & Elders</h2>
-    </div>
+  <div class="drawer drawer-end">
+    <input id="mobile-menu" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
+      <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 h-20">
+        <div class="flex items-center gap-3">
+          <div class={`flex h-10 w-10 items-center justify-center rounded-full ${isMission ? 'bg-primary' : 'bg-primary-gold'} text-white`}>
+            <span class="material-symbols-outlined">{isMission ? 'flutter_dash' : 'diversity_3'}</span>
+          </div>
+          <h2 class={`text-xl font-bold tracking-tight ${primaryColorClass}`}>AFT Kids & Elders</h2>
+        </div>
 
-    <nav class="hidden md:flex items-center gap-8">
+        <nav class="hidden md:flex items-center gap-8">
       {isMission ? (
         <>
           <a class={`text-sm font-semibold text-teal-deep dark:text-slate-300 ${navLinkHoverClass} transition-colors`} href="/">Our Mission</a>
@@ -39,10 +42,46 @@ const buttonClass = isMission ? 'bg-primary shadow-primary/20' : 'bg-accent-red 
       )}
     </nav>
 
-    <div class="flex items-center gap-4">
-      <button class={`rounded-full px-6 py-2 text-sm font-bold text-white shadow-lg transition-all hover:opacity-90 active:scale-95 ${buttonClass}`}>
-        Donate Now
-      </button>
+        <div class="flex items-center gap-4">
+          <button class={`hidden sm:block rounded-full px-6 py-2 text-sm font-bold text-white shadow-lg transition-all hover:opacity-90 active:scale-95 ${buttonClass}`}>
+            Donate Now
+          </button>
+          <label for="mobile-menu" class="btn btn-ghost btn-circle md:hidden">
+            <span class="material-symbols-outlined">menu</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-side">
+      <label for="mobile-menu" aria-label="close sidebar" class="drawer-overlay"></label>
+      <ul class="menu p-4 w-80 min-h-full bg-background-light dark:bg-background-dark text-base-content">
+        <div class="flex items-center gap-3 mb-8 px-4 py-2">
+          <div class={`flex h-10 w-10 items-center justify-center rounded-full ${isMission ? 'bg-primary' : 'bg-primary-gold'} text-white`}>
+            <span class="material-symbols-outlined">{isMission ? 'flutter_dash' : 'diversity_3'}</span>
+          </div>
+          <h2 class={`text-xl font-bold tracking-tight ${primaryColorClass}`}>AFT Kids & Elders</h2>
+        </div>
+        {isMission ? (
+          <>
+            <li><a class="text-lg font-semibold" href="/">Our Mission</a></li>
+            <li><a class="text-lg font-semibold" href="#programs">Programs</a></li>
+            <li><a class="text-lg font-semibold" href="/impact">Impact</a></li>
+            <li><a class="text-lg font-semibold" href="#team">Team</a></li>
+          </>
+        ) : (
+          <>
+            <li><a class="text-lg font-semibold" href="/">Our Work</a></li>
+            <li><a class="text-lg font-semibold" href="/impact">Impact</a></li>
+            <li><a class="text-lg font-semibold" href="#">Stories</a></li>
+            <li><a class="text-lg font-semibold" href="#">Reports</a></li>
+          </>
+        )}
+        <div class="mt-8 px-4">
+          <button class={`w-full rounded-full px-6 py-4 text-lg font-bold text-white shadow-lg transition-all hover:opacity-90 active:scale-95 ${buttonClass}`}>
+            Donate Now
+          </button>
+        </div>
+      </ul>
     </div>
   </div>
 </header>

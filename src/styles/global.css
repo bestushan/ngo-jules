@@ -1,25 +1,19 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@import "daisyui";
 
 @theme {
-  /* Colors */
   --color-primary: #ec5b13;
-  --color-primary-gold: #b8860b;
   --color-teal-deep: #004d4d;
   --color-sea-foam: #f0f7f4;
   --color-background-light: #f8f6f6;
   --color-background-dark: #221610;
-  --color-secondary-teal: #004d4d;
-  --color-accent-red: #a52a2a;
-  --color-background-light-7: #fdfbf7;
 
-  /* Fonts */
+  --color-primary-gold: #B8860B;
+  --color-secondary-teal: #004D4D;
+  --color-accent-red: #A52A2A;
+  --color-bg-light: #FDFBF7;
+  --color-bg-dark: #1a1614;
+
   --font-display: "Public Sans", sans-serif;
   --font-serif: "Playfair Display", serif;
-
-  /* Border Radius */
-  --radius-default: 0.25rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
-  --radius-full: 9999px;
 }
