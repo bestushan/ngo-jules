@@ -1,0 +1,88 @@
+---
+interface Props {
+  variant?: 'mission' | 'impact';
+}
+
+const { variant = 'mission' } = Astro.props;
+const isMission = variant === 'mission';
+const primaryTextClass = isMission ? 'text-primary' : 'text-primary-gold';
+const bgColorClass = isMission ? 'bg-teal-deep' : 'bg-background-dark';
+---
+
+<footer class={`${bgColorClass} py-16 text-white/60`}>
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid md:grid-cols-4 gap-12 mb-12">
+      <div class="col-span-2">
+        <div class={`flex items-center gap-3 text-white mb-6`}>
+          <span class={`material-symbols-outlined ${primaryTextClass} text-3xl`}>{isMission ? 'flutter_dash' : 'diversity_3'}</span>
+          <h2 class="text-xl font-bold tracking-tight">AFT Kids & Elders</h2>
+        </div>
+        <p class="max-w-sm mb-6">
+          {isMission
+            ? "Dedicated to the empowerment of the most vulnerable generations in Kandy, Sri Lanka through sustainable care and education."
+            : "A registered NGO dedicated to empowering the most vulnerable across Sri Lanka through education, healthcare, and sustainable development."
+          }
+        </p>
+        <div class="flex gap-4">
+          <a class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-primary transition-colors text-white" href="#">
+            <span class="material-symbols-outlined text-sm">public</span>
+          </a>
+          <a class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-primary transition-colors text-white" href="#">
+            <span class="material-symbols-outlined text-sm">{isMission ? 'share' : 'campaign'}</span>
+          </a>
+          {!isMission && (
+            <a class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-primary transition-colors text-white" href="#">
+              <span class="material-symbols-outlined text-sm">mail</span>
+            </a>
+          )}
+        </div>
+      </div>
+
+      <div>
+        <h5 class="text-white font-bold mb-6">Quick Links</h5>
+        <ul class="space-y-4 text-sm">
+          <li><a class="hover:text-primary transition-colors" href="#">{isMission ? 'Our Mission' : 'Our History'}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{isMission ? 'Scholarship Fund' : 'Project Locations'}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{isMission ? 'Financial Reports' : 'Success Stories'}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{isMission ? 'Contact Us' : 'Volunteer Opportunities'}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-white font-bold mb-6">{isMission ? 'Location' : 'Contact'}</h5>
+        {isMission ? (
+          <>
+            <p class="text-sm leading-relaxed mb-4">
+              123 Heritage Lane, Kandy Central,<br/>Sri Lanka
+            </p>
+            <div class="h-32 w-full rounded-xl overflow-hidden grayscale opacity-50" data-location="Kandy, Sri Lanka">
+              <img alt="Map Location" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgzyQjDEtfAb6bv2C15Bq5IfrJbb9l_-f5NhaEjGoCxl6cihId9VK_Hv0MPSQOBRULNPlw6ple8I2ZiFr-S8_upAQ9nltXfZg2gKBK-xXpwQmt74iDQ-oTCae4QMuGC62VwrQVAY3kSuIBf3r-VVp3C6vV03ltcpTvmgZwOu3XprN10we1sigmWZPdh-mjhoeVFtXBSZBYU2JRk3LwZTz0cPhV0XkAmSsD62zGUdglCzftRPvCndZEgtbsGvOPiAjpAnP-fS2FOfgd" />
+            </div>
+          </>
+        ) : (
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-center gap-3">
+              <span class={`material-symbols-outlined ${primaryTextClass} text-sm`}>mail</span>
+              hello@aftkidselders.org
+            </li>
+            <li class="flex items-center gap-3">
+              <span class={`material-symbols-outlined ${primaryTextClass} text-sm`}>call</span>
+              +94 (0) 11 234 5678
+            </li>
+            <li class="flex items-start gap-3">
+              <span class={`material-symbols-outlined ${primaryTextClass} text-sm`}>location_on</span>
+              No. 45 Temple View Road,<br/>Colombo 07, Sri Lanka
+            </li>
+          </ul>
+        )}
+      </div>
+    </div>
+    <div class="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs uppercase tracking-widest">
+      <p>© 2024 AFT Kids & Elders {isMission ? 'Foundation' : 'NGO'}. All rights reserved.</p>
+      <div class="flex gap-8">
+        <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>

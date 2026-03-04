@@ -1,0 +1,53 @@
+---
+const articles = [
+  {
+    date: 'May 12, 2024',
+    location: 'Kandy',
+    title: 'New Scholarship Enrollment Reaches Record Highs for 2024',
+    description: 'Over 500 applications received this quarter, showcasing the growing demand for educational support in rural regions...',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA7Z2ZD-IpJhv1WbdKwn-H9aiWMMXOD8zRXjXwhpOet5J623PTqTJd5XMmHYrevgRNLFLFbAuVuPD23dmy_6BqM6vkMZnZs9CwN0Vy6eqf9OKuMTZbevKY8sHVWO5dGL6JWy-sg19vzZk_mv3evwLwL0fpNbC9L03J8AqEFcdAJwSsTjtS2nt3PmjtZzZ0fKUhWNTKQeTR5_HdB0Rw1xx7zHFiz_tVj-C7wBjFkMZZrvwRF-CmWlWJE4TZJ4dOan5IBZpw5G6m0AIme'
+  },
+  {
+    date: 'April 28, 2024',
+    location: 'Matara',
+    title: 'Mobile Health Clinic Update: 3,000 Elders Served',
+    description: 'Our specialized geriatric team traveled 1,200km this month to provide essential screenings and medicine to remote villages...',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6rGdQKWl02SYLxVfC8WZ8w8MTkhTLXprzMfcZyDB2UZyi7srUnSern4Ih-8xol3c1G6UlzacvDB356k-0tBBHG5yIYllIZnZhvdtx2VcIi_8pADe6TI7D05-jQqaHsP-IQnfTZDWZ60aGlNAgrY3JccjfrllaMjdtG0SuFamECPL0JfpL-_m_jeNCq1ydb9Iwsg9CzElr-jRrJJBoAcLglTMnq3WtW9t6CIfi722JheSGNrvQ13JLryz1DzMAazyDYXeIQethLXqn'
+  },
+  {
+    date: 'April 15, 2024',
+    location: 'Jaffna',
+    title: "Clean Water Project Phase II Completed in Northern Province",
+    description: "The inauguration of five new filtration systems marks a milestone in our 'Health First' community initiative...",
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1Gv_F2it989A5Jmts3xNOdEOZe4RAUjAtaf2VWJqAn6laRTdCrMM87Sk5s6yohPCrfPMzW1nzEsIsOWzSnbjkemm0mLtbbu8VdcbKkTA1dy64-M5c_q0g39FAaFJqGuwIIv8OvDLwrStjK224zclhcyLI7-bf9k1AU4xyHmLBvSaxwKDafLYnJQMbSyceCh3-n1Z5gbyG1B53oME2up3fH5TVopQ75tijsv4L123qFaYZy0UMHhaFEZWvvYML98wHsXa2hdMK7VHI'
+  }
+];
+---
+<section class="py-24 bg-background-light dark:bg-background-dark">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-secondary-teal dark:text-primary-gold text-3xl font-bold mb-12 text-center">Field Updates & News</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {articles.map((article) => (
+        <article class="flex flex-col gap-4">
+          <div class="aspect-video bg-slate-200 rounded-xl overflow-hidden mb-2">
+            <img class="w-full h-full object-cover" src={article.img} alt={article.title} />
+          </div>
+          <div class="flex items-center gap-3 text-xs text-primary-gold font-bold uppercase tracking-widest">
+            <span>{article.date}</span>
+            <span class="w-1 h-1 bg-primary-gold rounded-full"></span>
+            <span>{article.location}</span>
+          </div>
+          <h3 class="text-xl font-bold text-secondary-teal dark:text-white leading-tight hover:text-primary-gold transition-colors cursor-pointer">
+            {article.title}
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            {article.description}
+          </p>
+          <a class="text-accent-red text-sm font-bold flex items-center gap-1 group mt-2" href="#">
+            Read Story <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">chevron_right</span>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

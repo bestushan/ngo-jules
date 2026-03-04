@@ -1,0 +1,31 @@
+---
+const team = [
+  { name: 'Dr. Ananda Silva', role: 'Managing Director', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGtNTzXYdAbbADbCxBPgTfoKgeNUbWka2kV1wxTz2osAHOBQW-DL3J-KEYbPExra5ee5ANLZlbhVgIY_O4w7rSYrOTIzyYPSNWDWA_zbwzRLg6rjfl153pcX4NqgRxVswvTCGGIkc6xLp3YI86Xi2YHbJsJSIBS3kmADuzBwSjcN5uJxMHCHC650WoB4kytgnhHGy603I36RSuts4Ykb8TshRaJv-N0TpWcHiP85ZZyoGY1BmyzrP9yLgr5WDJrQVkS72l4X9eYWdo' },
+  { name: 'Lakshmi Perera', role: 'Head of Youth Programs', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWy1-Yc6Or9ngnwQsya_ZgYg9XGg3lhX7YzbwTVS2fS1-zerlbV9piemVdR3VIeHufbgMXwOjTbg6fgklpr3ND7oF_bdeZBVT2BJTlL-2uux4Xytn7Zax3g2ui7uaecELx1nDIthWLislno4sV8Yqel1I3GgTSwV-kM-nlQWcWBKvVnLT7QyDqROSgIJWcluPELoDHBaaBUGHEudLJV_EaoYLxRqblo21USL1j-HGQXy11lPJNV7wkch9F0NZFcd60vI4QyGaMqPUt' },
+  { name: 'Rajith Gunawardena', role: 'Elderly Care Lead', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAo3umrItPPwpNE54mIpCN0guoCAVGj1xIWoUfvcz8N2urkmBaBkKZ1zBLJYEZwEu6trULbJkuB9w4o7k1u_03KK_yIixv1PhUtAgYD4DjuTC8N6qY-0_g05VWzp1kaHqFzaN2UmnjTTRT9OugTBSUieWqkwrbM6STI8UFLeM6aai4mFAOK0jtEeHBotuB32HUAeEzti4VsZL19P1wHvVDjvT3umc7mKCkVWB0KNF9IjkEdy-txyiT8EbPVUu5IXeDnuX2XQMdw6wsl' },
+  { name: 'Nimali Jayasuriya', role: 'Operations Director', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB9xSYOIrTpwgFu80YyBPYN8lCBXiw2LhEMF2zi4VrZkjs9t2WugyqxNo9nYSI3rj9Ny7feIK3T1NNnjIAx4xJrBzLAQ2KFuWo04Pk8joHkfUKlyB3xsau5GGPHuUQjoigcb_JXsKQ_ReSeW4ldPr5ANslHZYXXGizbKjbvxBXlLIiN-v_EDpZHfG2d6tFuH2i8vw9HetgN3H2DRkycBQlUmq5gSd0zFlPjr3CAuymIpXwAiCqg4nJus7uNnvYBmeAUvoCe_638JA7g' }
+];
+---
+<section id="team" class="py-24 bg-background-light dark:bg-background-dark">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div class="max-w-xl">
+        <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-primary">Our Guardians</h2>
+        <h3 class="mt-2 text-4xl font-bold text-teal-deep dark:text-white">Board of Directors</h3>
+        <p class="mt-4 text-teal-deep/60 dark:text-slate-400">Our leadership resides and operates locally in Kandy, ensuring every initiative is culturally resonant and directly impactful.</p>
+      </div>
+      <a class="px-6 py-2 border-2 border-teal-deep/20 rounded-full font-bold text-teal-deep dark:text-slate-300 hover:bg-teal-deep hover:text-white transition-all" href="#">View All Members</a>
+    </div>
+    <div class="grid md:grid-cols-4 gap-8">
+      {team.map((member) => (
+        <div class="text-center group">
+          <div class="mb-4 aspect-square overflow-hidden rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-500">
+            <img alt={member.name} class="h-full w-full object-cover" src={member.img} />
+          </div>
+          <h4 class="font-bold text-teal-deep dark:text-white">{member.name}</h4>
+          <p class="text-sm text-primary font-medium">{member.role}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

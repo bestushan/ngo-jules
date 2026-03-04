@@ -1,0 +1,59 @@
+---
+const stories = [
+  {
+    title: "Amara's Journey",
+    category: "Scholar",
+    location: "Kandy District",
+    description: "Once unable to afford textbooks, Amara is now a second-year Medical student at Kandy University, pioneering change in her village.",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCOJUjbzGT7irMLQLVyycbxiT4_AuJytVGij9toa6JltvmexVHyDFTLVm7inM2D_f-zUYVul3YDuY4LuQ46I06-RqMBKHX261IdVUdY-swShXJMPF8MC2LS2-SqAvnyMiJHndnJzyaqiuB5vxKuryxabzCIej0EQ9swWU7kX_0uadirFI3jXj4hILYn9P5FQZ4S3sZjve40_oAErLU1UFAwZY3RZobY6kUwiCGChOq7WApWFFmAfFW-jmsxIP2kA_8PQu8KOkNic2-h"
+  },
+  {
+    title: "Kavi's New Chapter",
+    category: "Graduate",
+    location: "Colombo North",
+    description: "Kavi completed his vocational training in mechanical engineering and has secured a position at a leading national firm.",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDcKHAdlpNkGig4MF689NdsNgl1Po3KLTW70XwHCbtBo06WKMHn6NGkISV7dpYh17XXkL9p6wvu03D9vjkGy4W0JJ0Q5fkN0QDs6UefK-PZREKQTCIHuUDe6wxyWNQwtplyBWlG0zohwP0ZBW0fpkDuidK1n6fJDAjSFUqBnXLkT2r3FsyfNo-6gVUL5hIhmeAMkh84BBQR3jTxMSIE8o6F-CSRPXKfeIV-4VjLXUlEQiKUEBR5xr89o9DwuqD9M6s9y5tKPXKeKaQg"
+  },
+  {
+    title: "Dulanjali's Growth",
+    category: "Primary",
+    location: "Galle",
+    description: "From the tea estates of Galle to the top of her class, Dulanjali's literacy journey is a testament to community-led education.",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAKLBl4SlrdDbDaEctiU806jZWcZ2qNacu7Rk1o1dTL1bUvVhs3pZWdD1SX6BxYtJFpXBcB8OC0CuGyO8qPviuTEovplp8yFJuZWKhHab9bXNS6mJimCjc-J6hc4Wa93BNFCSzbn6NQPqxxsY53nUxB7h-WQ1B_e8KQxnmATOjot0tsY_GckilCBwswOsgZInkC2wSwsucpEyApTWo_wSsiPE3vbxdqLA5tzNeMZ5iEYa82ND8ZJ8WYP0V0WZNtFfSzEJgP6SI7EoUP"
+  }
+];
+---
+<section class="py-24 bg-secondary-teal/5 dark:bg-slate-900">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+      <div class="max-w-xl">
+        <h2 class="text-primary-gold font-bold text-4xl mb-4">Emergence Stories</h2>
+        <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+          Witness the profound shift from vulnerability to strength. These are the faces of the futures we are building together.
+        </p>
+      </div>
+      <a class="text-primary-gold font-bold flex items-center gap-2 group" href="#">
+        View All Stories <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {stories.map((story) => (
+        <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-secondary-teal/5 border border-primary-gold/5">
+          <div class="relative aspect-[4/5] overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={story.img} alt={story.title} />
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-secondary-teal/90 to-transparent">
+              <span class="bg-primary-gold text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full mb-2 inline-block">{story.category}</span>
+              <h3 class="text-white text-2xl font-bold">{story.title}</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">{story.description}</p>
+            <div class="flex items-center gap-2 text-primary-gold text-xs font-bold uppercase">
+              <span class="material-symbols-outlined text-sm">location_on</span> {story.location}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

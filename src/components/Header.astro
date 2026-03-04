@@ -1,0 +1,48 @@
+---
+interface Props {
+  variant?: 'mission' | 'impact';
+}
+
+const { variant = 'mission' } = Astro.props;
+
+const isMission = variant === 'mission';
+const primaryColorClass = isMission ? 'text-teal-deep dark:text-primary' : 'text-secondary-teal dark:text-primary-gold';
+const navLinkHoverClass = isMission ? 'hover:text-primary' : 'hover:text-primary-gold';
+const activeLinkClass = !isMission ? 'text-primary-gold underline underline-offset-8' : '';
+const buttonClass = isMission ? 'bg-primary shadow-primary/20' : 'bg-accent-red shadow-accent-red/20';
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 h-20">
+    <div class="flex items-center gap-3">
+      <div class={`flex h-10 w-10 items-center justify-center rounded-full ${isMission ? 'bg-primary' : 'bg-primary-gold'} text-white`}>
+        <span class="material-symbols-outlined">{isMission ? 'flutter_dash' : 'diversity_3'}</span>
+      </div>
+      <h2 class={`text-xl font-bold tracking-tight ${primaryColorClass}`}>AFT Kids & Elders</h2>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8">
+      {isMission ? (
+        <>
+          <a class={`text-sm font-semibold text-teal-deep dark:text-slate-300 ${navLinkHoverClass} transition-colors`} href="/">Our Mission</a>
+          <a class={`text-sm font-semibold text-teal-deep dark:text-slate-300 ${navLinkHoverClass} transition-colors`} href="#programs">Programs</a>
+          <a class={`text-sm font-semibold text-teal-deep dark:text-slate-300 ${navLinkHoverClass} transition-colors`} href="/impact">Impact</a>
+          <a class={`text-sm font-semibold text-teal-deep dark:text-slate-300 ${navLinkHoverClass} transition-colors`} href="#team">Team</a>
+        </>
+      ) : (
+        <>
+          <a class={`text-sm font-semibold hover:text-primary-gold transition-colors`} href="/">Our Work</a>
+          <a class={`text-sm font-semibold ${activeLinkClass}`} href="/impact">Impact</a>
+          <a class={`text-sm font-semibold hover:text-primary-gold transition-colors`} href="#">Stories</a>
+          <a class={`text-sm font-semibold hover:text-primary-gold transition-colors`} href="#">Reports</a>
+        </>
+      )}
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button class={`rounded-full px-6 py-2 text-sm font-bold text-white shadow-lg transition-all hover:opacity-90 active:scale-95 ${buttonClass}`}>
+        Donate Now
+      </button>
+    </div>
+  </div>
+</header>
