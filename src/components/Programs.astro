@@ -1,10 +1,45 @@
 ---
 const programs = [
-  { icon: 'school', title: 'Education & Scholarships', description: 'Paving academic pathways for brilliant minds in underprivileged communities.' },
-  { icon: 'psychology', title: 'Mentoring & Youth', description: 'Guiding the next generation through wisdom and shared experience.' },
-  { icon: 'sports_soccer', title: 'Sports & Development', description: 'Building character, discipline, and health through athletic excellence.' },
-  { icon: 'health_and_safety', title: 'Health & Well-being', description: 'Ensuring access to quality medical care and nutritional support.' },
-  { icon: 'elderly', title: 'Elderly Care', description: 'Dignified living and community for the elders of Kandy.' }
+  {
+    id: 'education',
+    icon: 'school',
+    title: 'Education & Scholarships',
+    description: 'Paving academic pathways for brilliant minds in underprivileged communities.',
+    details: 'Our scholarship program covers tuition, books, and living expenses for high-achieving students from low-income families in Kandy. We also provide extra-curricular tutoring and university preparation workshops.',
+    goals: ['95% graduation rate', '100+ active scholars', 'Higher education placement assistance']
+  },
+  {
+    id: 'mentoring',
+    icon: 'psychology',
+    title: 'Mentoring & Youth',
+    description: 'Guiding the next generation through wisdom and shared experience.',
+    details: 'We connect young people with professionals and community leaders who provide guidance, emotional support, and career advice. This program focuses on building confidence and leadership skills.',
+    goals: ['One-on-one mentorship pairs', 'Leadership summits', 'Career guidance workshops']
+  },
+  {
+    id: 'sports',
+    icon: 'sports_soccer',
+    title: 'Sports & Development',
+    description: 'Building character, discipline, and health through athletic excellence.',
+    details: 'Through organized sports like football and cricket, we teach teamwork, discipline, and resilience. Our facilities provide a safe space for physical activity and community bonding.',
+    goals: ['Improved physical health metrics', 'Community tournaments', 'Discipline and teamwork training']
+  },
+  {
+    id: 'health',
+    icon: 'health_and_safety',
+    title: 'Health & Well-being',
+    description: 'Ensuring access to quality medical care and nutritional support.',
+    details: 'We provide regular health screenings, access to essential medications, and nutritional programs for both children and elders. Our mobile clinic reaches remote areas surrounding Kandy.',
+    goals: ['Quarterly health check-ups', 'Nutritional supplement distribution', 'Emergency medical fund access']
+  },
+  {
+    id: 'elderly',
+    icon: 'elderly',
+    title: 'Elderly Care',
+    description: 'Dignified living and community for the elders of Kandy.',
+    details: 'Our elderly care program focuses on combating isolation and providing specialized geriatric care. We offer social clubs, physical therapy, and home-visit services for those with limited mobility.',
+    goals: ['Reduced social isolation', 'Accessible physical therapy', 'Dignified living standards']
+  }
 ];
 ---
 <section id="programs" class="py-24 bg-white dark:bg-background-dark/50">
@@ -13,16 +48,64 @@ const programs = [
       <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-primary">Core Pillars</h2>
       <h3 class="mt-2 text-4xl font-bold text-teal-deep dark:text-white">Our Transformation Programs</h3>
     </div>
+
     <div class="grid gap-8 md:grid-cols-3 lg:grid-cols-5">
       {programs.map((program) => (
-        <div class="group flex flex-col items-center p-8 text-center bg-sea-foam dark:bg-teal-deep/10 rounded-2xl transition-all hover:shadow-xl hover:-translate-y-2">
+        <div
+          class="group flex flex-col items-center p-8 text-center bg-sea-foam dark:bg-teal-deep/10 rounded-2xl transition-all hover:shadow-xl hover:-translate-y-2 cursor-pointer"
+          onclick={`document.getElementById('modal_prog_${program.id}').showModal()`}
+        >
           <div class="mb-6 rounded-full bg-white dark:bg-background-dark p-4 text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
             <span class="material-symbols-outlined text-4xl">{program.icon}</span>
           </div>
-          <h4 class="mb-3 font-bold text-teal-deep dark:text-white">{program.title}</h4>
+          <h4 class="mb-3 font-bold text-teal-deep dark:text-white group-hover:text-primary transition-colors">{program.title}</h4>
           <p class="text-sm text-teal-deep/60 dark:text-slate-400">{program.description}</p>
         </div>
       ))}
     </div>
+
+    {programs.map((program) => (
+      <dialog id={`modal_prog_${program.id}`} class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box bg-white dark:bg-slate-900 border border-primary/10 max-w-2xl">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="rounded-full bg-primary/10 p-4 text-primary">
+              <span class="material-symbols-outlined text-4xl">{program.icon}</span>
+            </div>
+            <h3 class="font-bold text-2xl text-teal-deep dark:text-white">{program.title}</h3>
+          </div>
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-primary font-bold uppercase text-xs tracking-widest mb-2">About the Program</h4>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                {program.details}
+              </p>
+            </div>
+            <div>
+              <h4 class="text-primary font-bold uppercase text-xs tracking-widest mb-2">Core Objectives</h4>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {program.goals.map(goal => (
+                  <li class="flex items-center gap-3 text-sm text-teal-deep dark:text-slate-300">
+                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                    {goal}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div class="modal-action">
+            <form method="dialog" class="flex gap-4">
+              <button class="btn bg-primary text-white border-none hover:bg-primary/90 px-8">Support This Program</button>
+              <button class="btn btn-ghost">Close</button>
+            </form>
+          </div>
+        </div>
+        <form method="dialog" class="modal-backdrop bg-black/40 backdrop-blur-sm">
+          <button>close</button>
+        </form>
+      </dialog>
+    ))}
   </div>
 </section>

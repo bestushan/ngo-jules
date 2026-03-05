@@ -2,17 +2,27 @@
 > app@0.0.1 dev
 > astro dev
 
-02:54:35 [types] Generated 1ms
-02:54:35 [content] Syncing content
-02:54:35 [content] Synced content
-02:54:35 [vite] Port 4321 is in use, trying another one...
-02:54:35 [vite] Port 4322 is in use, trying another one...
-02:54:35 [vite] Port 4323 is in use, trying another one...
-02:54:35 [vite] Port 4324 is in use, trying another one...
+05:14:17 [types] Generated 2ms
+05:14:17 [content] Syncing content
+05:14:17 [content] Astro config changed
+05:14:17 [content] Clearing content store
+05:14:17 [content] Synced content
+05:14:17 [vite] Port 4321 is in use, trying another one...
+05:14:17 [vite] Port 4322 is in use, trying another one...
+05:14:17 [vite] Port 4323 is in use, trying another one...
 
- astro  v5.18.0 ready in 376 ms
+ astro  v5.18.0 ready in 679 ms
 
-┃ Local    http://localhost:4325/
+┃ Local    http://localhost:4324/
 ┃ Network  use --host to expose
 
-02:54:35 watching for file changes...
+05:14:17 watching for file changes...
+/*! 🌼 daisyUI 5.5.19 */
+05:18:45 [200] /discover 237ms
+05:18:48 [200] / 10ms
+05:23:13 [watch] src/components/SuccessStories.astro
+05:23:13 [watch] src/components/SuccessStories.astro
+05:23:17 [watch] src/components/LatestNews.astro
+05:23:17 [watch] src/components/LatestNews.astro
+05:23:19 [watch] src/components/AnnualReports.astro
+05:23:19 [watch] src/components/AnnualReports.astro

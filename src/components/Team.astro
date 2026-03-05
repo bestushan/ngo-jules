@@ -1,9 +1,33 @@
 ---
 const team = [
-  { name: 'Dr. Ananda Silva', role: 'Managing Director', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGtNTzXYdAbbADbCxBPgTfoKgeNUbWka2kV1wxTz2osAHOBQW-DL3J-KEYbPExra5ee5ANLZlbhVgIY_O4w7rSYrOTIzyYPSNWDWA_zbwzRLg6rjfl153pcX4NqgRxVswvTCGGIkc6xLp3YI86Xi2YHbJsJSIBS3kmADuzBwSjcN5uJxMHCHC650WoB4kytgnhHGy603I36RSuts4Ykb8TshRaJv-N0TpWcHiP85ZZyoGY1BmyzrP9yLgr5WDJrQVkS72l4X9eYWdo' },
-  { name: 'Lakshmi Perera', role: 'Head of Youth Programs', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWy1-Yc6Or9ngnwQsya_ZgYg9XGg3lhX7YzbwTVS2fS1-zerlbV9piemVdR3VIeHufbgMXwOjTbg6fgklpr3ND7oF_bdeZBVT2BJTlL-2uux4Xytn7Zax3g2ui7uaecELx1nDIthWLislno4sV8Yqel1I3GgTSwV-kM-nlQWcWBKvVnLT7QyDqROSgIJWcluPELoDHBaaBUGHEudLJV_EaoYLxRqblo21USL1j-HGQXy11lPJNV7wkch9F0NZFcd60vI4QyGaMqPUt' },
-  { name: 'Rajith Gunawardena', role: 'Elderly Care Lead', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAo3umrItPPwpNE54mIpCN0guoCAVGj1xIWoUfvcz8N2urkmBaBkKZ1zBLJYEZwEu6trULbJkuB9w4o7k1u_03KK_yIixv1PhUtAgYD4DjuTC8N6qY-0_g05VWzp1kaHqFzaN2UmnjTTRT9OugTBSUieWqkwrbM6STI8UFLeM6aai4mFAOK0jtEeHBotuB32HUAeEzti4VsZL19P1wHvVDjvT3umc7mKCkVWB0KNF9IjkEdy-txyiT8EbPVUu5IXeDnuX2XQMdw6wsl' },
-  { name: 'Nimali Jayasuriya', role: 'Operations Director', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB9xSYOIrTpwgFu80YyBPYN8lCBXiw2LhEMF2zi4VrZkjs9t2WugyqxNo9nYSI3rj9Ny7feIK3T1NNnjIAx4xJrBzLAQ2KFuWo04Pk8joHkfUKlyB3xsau5GGPHuUQjoigcb_JXsKQ_ReSeW4ldPr5ANslHZYXXGizbKjbvxBXlLIiN-v_EDpZHfG2d6tFuH2i8vw9HetgN3H2DRkycBQlUmq5gSd0zFlPjr3CAuymIpXwAiCqg4nJus7uNnvYBmeAUvoCe_638JA7g' }
+  {
+    id: 'ananda',
+    name: 'Dr. Ananda Silva',
+    role: 'Managing Director',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGtNTzXYdAbbADbCxBPgTfoKgeNUbWka2kV1wxTz2osAHOBQW-DL3J-KEYbPExra5ee5ANLZlbhVgIY_O4w7rSYrOTIzyYPSNWDWA_zbwzRLg6rjfl153pcX4NqgRxVswvTCGGIkc6xLp3YI86Xi2YHbJsJSIBS3kmADuzBwSjcN5uJxMHCHC650WoB4kytgnhHGy603I36RSuts4Ykb8TshRaJv-N0TpWcHiP85ZZyoGY1BmyzrP9yLgr5WDJrQVkS72l4X9eYWdo',
+    bio: 'With over 25 years of experience in community development and public health, Dr. Silva has been at the forefront of social transformation in Kandy. He holds a PhD in Social Sciences and has dedicated his career to building sustainable support systems for the vulnerable.'
+  },
+  {
+    id: 'lakshmi',
+    name: 'Lakshmi Perera',
+    role: 'Head of Youth Programs',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWy1-Yc6Or9ngnwQsya_ZgYg9XGg3lhX7YzbwTVS2fS1-zerlbV9piemVdR3VIeHufbgMXwOjTbg6fgklpr3ND7oF_bdeZBVT2BJTlL-2uux4Xytn7Zax3g2ui7uaecELx1nDIthWLislno4sV8Yqel1I3GgTSwV-kM-nlQWcWBKvVnLT7QyDqROSgIJWcluPELoDHBaaBUGHEudLJV_EaoYLxRqblo21USL1j-HGQXy11lPJNV7wkch9F0NZFcd60vI4QyGaMqPUt',
+    bio: 'Lakshmi is a passionate advocate for youth empowerment. She specializes in curriculum development and mentorship programs that help underprivileged students bridge the gap between education and career success.'
+  },
+  {
+    id: 'rajith',
+    name: 'Rajith Gunawardena',
+    role: 'Elderly Care Lead',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAo3umrItPPwpNE54mIpCN0guoCAVGj1xIWoUfvcz8N2urkmBaBkKZ1zBLJYEZwEu6trULbJkuB9w4o7k1u_03KK_yIixv1PhUtAgYD4DjuTC8N6qY-0_g05VWzp1kaHqFzaN2UmnjTTRT9OugTBSUieWqkwrbM6STI8UFLeM6aai4mFAOK0jtEeHBotuB32HUAeEzti4VsZL19P1wHvVDjvT3umc7mKCkVWB0KNF9IjkEdy-txyiT8EbPVUu5IXeDnuX2XQMdw6wsl',
+    bio: 'Rajith has spent decades managing elderly care facilities and community outreach. His focus is on ensuring that the elders of Kandy live with dignity, respect, and access to the medical care they need.'
+  },
+  {
+    id: 'nimali',
+    name: 'Nimali Jayasuriya',
+    role: 'Operations Director',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB9xSYOIrTpwgFu80YyBPYN8lCBXiw2LhEMF2zi4VrZkjs9t2WugyqxNo9nYSI3rj9Ny7feIK3T1NNnjIAx4xJrBzLAQ2KFuWo04Pk8joHkfUKlyB3xsau5GGPHuUQjoigcb_JXsKQ_ReSeW4ldPr5ANslHZYXXGizbKjbvxBXlLIiN-v_EDpZHfG2d6tFuH2i8vw9HetgN3H2DRkycBQlUmq5gSd0zFlPjr3CAuymIpXwAiCqg4nJus7uNnvYBmeAUvoCe_638JA7g',
+    bio: 'Nimali ensures the smooth day-to-day operations of all AFT initiatives. Her background in logistics and non-profit management is crucial for the transparent and efficient delivery of our programs.'
+  }
 ];
 ---
 <section id="team" class="py-24 bg-background-light dark:bg-background-dark">
@@ -16,16 +40,53 @@ const team = [
       </div>
       <a class="px-6 py-2 border-2 border-teal-deep/20 rounded-full font-bold text-teal-deep dark:text-slate-300 hover:bg-teal-deep hover:text-white transition-all" href="#">View All Members</a>
     </div>
+
     <div class="grid md:grid-cols-4 gap-8">
       {team.map((member) => (
-        <div class="text-center group">
+        <div
+          class="text-center group cursor-pointer"
+          onclick={`document.getElementById('modal_${member.id}').showModal()`}
+        >
           <div class="mb-4 aspect-square overflow-hidden rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-500">
             <img alt={member.name} class="h-full w-full object-cover" src={member.img} />
           </div>
-          <h4 class="font-bold text-teal-deep dark:text-white">{member.name}</h4>
+          <h4 class="font-bold text-teal-deep dark:text-white group-hover:text-primary transition-colors">{member.name}</h4>
           <p class="text-sm text-primary font-medium">{member.role}</p>
         </div>
       ))}
     </div>
+
+    {team.map((member) => (
+      <dialog id={`modal_${member.id}`} class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box bg-white dark:bg-slate-900 border border-primary/10">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-24 h-24 rounded-xl overflow-hidden shadow-lg">
+              <img src={member.img} alt={member.name} class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h3 class="font-bold text-xl text-teal-deep dark:text-white">{member.name}</h3>
+              <p class="text-primary font-medium">{member.role}</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h4 class="text-primary font-bold uppercase text-xs tracking-widest">Biography</h4>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              {member.bio}
+            </p>
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn bg-teal-deep text-white border-none hover:bg-primary px-8">Close</button>
+            </form>
+          </div>
+        </div>
+        <form method="dialog" class="modal-backdrop bg-black/40 backdrop-blur-sm">
+          <button>close</button>
+        </form>
+      </dialog>
+    ))}
   </div>
 </section>
